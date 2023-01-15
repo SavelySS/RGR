@@ -1,9 +1,9 @@
 #include <iostream>
+#include <fstream>
+#include <iomanip>
 //#include <windows.h>
 #include <string>
 #include <cstdlib>
-#include <iomanip>
-#include <fstream>
 
 using namespace std;
 
@@ -183,9 +183,9 @@ private:
 
 public:
     human hu[20] = {
-        {"cc@gmail.com", "Геннадий", "Персиков"},
-        {"sdf@gmail.com","Елизавета", "Горская"},
-        {"ddd@gmail.com","Валерий", "Арюпкин"},
+        {"cc@gmail.com", "Вова", "Игнатов"},
+        {"sdf@gmail.com","Лиза", "Иванова"},
+        {"ddd@gmail.com","Петр", "Ремез"},
     };
     ofstream fout;
     ifstream fin;
@@ -295,7 +295,7 @@ public:
 
     void rdfileZ()
     {
-        fin.open("Заказчики.txt");
+        fin.open("Zakazchiki.txt");
         fin >> n;
         fin.ignore();
         for (int i = 0; i < n; i++)
@@ -561,6 +561,7 @@ public:
         }
         else if (c == '0')
         {
+            detl::wrfile();
             work = 0;
             return 0;
         }
@@ -612,6 +613,9 @@ public:
         }
         else if (c == '0')
         {
+            Zakazes::wrfile();
+            detl::wrfile();
+            client::wrfile();
             work = 0;
             return 0;
         }
@@ -662,6 +666,9 @@ public:
         }
         else if (c == '0')
         {
+            Zakazes::wrfile();
+            detl::wrfile();
+            client::wrfile();
             work = 0;
             return 0;
         }
@@ -701,7 +708,7 @@ public:
         }
         else if (c == '6')
         {
-            detl::wrfile();
+            detl::rdfileZ();
             return 6;
         }
         else if (c == '7')
@@ -711,6 +718,9 @@ public:
         }
         else if (c == '0')
         {
+            Zakazes::wrfile();
+            detl::wrfile();
+            client::wrfile();
             work = 0;
             return 0;
         }
